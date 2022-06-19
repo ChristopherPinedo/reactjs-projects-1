@@ -1,11 +1,11 @@
 import React from 'react';
-import './styles';
 import {
   CssBaseline,
   Grid,
   Container,
   Box,
   Button,
+  Typography,
   } from '@mui/material/'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 
@@ -22,20 +22,15 @@ function App() {
       <Container maxWidth="sm">
         <Box sx={{
           height: '100vh',
-          bgcolor: "grey.800",
-          borderRadius: 1,
+          bgcolor: "info.dark",
+          borderRadius: 4,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'space-evenly',
+          justifyContent: 'space-around',
         }}>
-        <h1>React Projects</h1>
-        <Button href="/page1" variant="contained">
-          Page 1
-        </Button>
-        <Button href="/page2" variant="contained">
-          Page 2
-        </Button>
+        <Typography variant="h3" component="h1">MUI Projects</Typography>
+
         </Box>
       </Container>
     </ThemeProvider>

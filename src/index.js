@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import ProjectsMui from './pages/ProjectsMui';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ProjectsMui />
   </React.StrictMode>,
   document.getElementById('root')
 );
