@@ -1,4 +1,6 @@
 import React from 'react';
+import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
+import ResponsiveDrawer from "./components/ResponsiveDrawer";
 import {
   CssBaseline,
   Grid,
@@ -6,8 +8,8 @@ import {
   Box,
   Button,
   Typography,
-  } from '@mui/material/'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
+  Chip,
+  } from '@mui/material/';
 
 const darkTheme = createTheme({
   palette: {
@@ -19,20 +21,65 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <Container maxWidth="sm">
+      <ResponsiveDrawer>
         <Box sx={{
-          height: '100vh',
-          bgcolor: "info.dark",
-          borderRadius: 4,
+          bgcolor: "grey.800",
+          minHeight: "90%",
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'space-around',
+          justifyContent: 'center',
+          gap: 4,
+          padding: 4,
         }}>
-        <Typography variant="h3" component="h1">MUI Projects</Typography>
-
+          <Typography variant="p">
+            Compendio de proyectos basados en react con distintos stacks y metodologias de diferentes escuelas.
+          </Typography>
+          <Box sx={{width: "100%"}}>
+            <Typography variant="h6" mb={2}>Tecnologias</Typography>
+            <Box sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 2,
+              justifyContent: 'center',
+            }}>
+              <Chip label="Tech 1"/>
+              <Chip label="Tech 2"/>
+              <Chip label="Tech 3"/>
+              <Chip label="Tech 4"/>
+              <Chip label="Tech 5"/>
+              <Chip label="Tech 6"/>
+            </Box>
+          </Box>
+          <Box width="100%">
+            <Typography variant="h6" mb={2}>Conceptos</Typography>
+            <Box sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 2,
+              justifyContent: "center",
+            }}>
+              <Chip label="Concepto 1"/>
+              <Chip label="Concepto 2"/>
+              <Chip label="Concepto 3"/>
+              <Chip label="Concepto 4"/>
+            </Box>
+          </Box>
+          <Box width="100%">
+            <Typography variant="h6" mb={2}>Escuelas</Typography>
+            <Box sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 2,
+              justifyContent: "center",
+            }}>
+              <Chip label="Escuela 1"/>
+              <Chip label="Escuela 2"/>
+              <Chip label="Escuela 3"/>
+              <Chip label="Escuela 4"/>
+            </Box>
+          </Box>
         </Box>
-      </Container>
+      </ResponsiveDrawer>
     </ThemeProvider>
   )
 }
