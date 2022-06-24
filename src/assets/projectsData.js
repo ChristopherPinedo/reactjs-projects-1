@@ -29,8 +29,8 @@ const projectsData = {
       },
     },
   },
-  tecnologias: [],
-  concepts: [],
+  tecnologias: {},
+  conceptos: {},
 };
 
 export default projectsData

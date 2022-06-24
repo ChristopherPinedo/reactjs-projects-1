@@ -16,23 +16,37 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {LogoDev, LightMode, StarBorder, ExpandLess, ExpandMore} from '@mui/icons-material';
+import projectsData from '../assets/projectsData';
+import { Collapse, ListSubheader, Switch } from '@mui/material';
 
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  const handleClick = () => {
+    setOpen(!open);
+  }
+
 
   const drawer = (
     <div>
-      <Toolbar />
+      <Toolbar sx={{justifyContent: "center"}} >
+        <Typography variant="h6">React projects</Typography>
+      </Toolbar>
       <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+      <List subheader={
+        <ListSubheader>
+          Escuelas
+        </ListSubheader>
+      }>
+        {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -41,21 +55,28 @@ function ResponsiveDrawer(props) {
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
-        ))}
+        ))} */}
+          <ListSubheader>
+            Escuelas 2
+          </ListSubheader>
+          <ListItemButton onClick={handleClick}>
+            <ListItemText primary="Inbox" />
+            {open ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <ListItemButton sx={{ pl: 4 }}>
+                <ListItemText primary="Starred" />
+              </ListItemButton>
+            </List>
+          </Collapse>
+          <Divider />
+          <ListItem>
+            <ListItemText primary="Light mode"/>
+            <Switch/>
+          </ListItem>
       </List>
       <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
     </div>
   );
 
