@@ -1,0 +1,16 @@
+{
+  "misDatos": [
+    {
+      "titulo": "Nombre",
+      "Descripcion": "Christopher Pinedo"
+    },
+    {
+      "titulo": "Correo",
+      "Descripcion": "christopher.pinedo@hotmail.com"
+    },
+    {
+      "titulo": "Dirección",
+      "Descripcion": "Av. Micasa 123"
+    }
+  ]
+}

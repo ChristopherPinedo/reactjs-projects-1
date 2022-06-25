@@ -31,33 +31,29 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
   const handleClick = () => {
+
     setOpen(!open);
   }
 
+  console.log(projectsData.map(ele => console.log(ele)))
 
   const drawer = (
     <div>
-      <Toolbar sx={{justifyContent: "center"}} >
+      <Toolbar sx={{justifyContent: "center" }} >
         <Typography variant="h6">React projects</Typography>
       </Toolbar>
       <Divider />
-      <List subheader={
-        <ListSubheader>
-          Escuelas
-        </ListSubheader>
-      }>
-        {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))} */}
+      <List>
+          {
+            projectsData.map((element, index) => {
+              return(
+              <ListSubheader Key={index}>{element.titulo}</ListSubheader>
+              )
+            })
+          }
+        {/* ///////////////////////////////////////// */}
           <ListSubheader>
-            Escuelas 2
+            Escuelas
           </ListSubheader>
           <ListItemButton onClick={handleClick}>
             <ListItemText primary="Inbox" />
@@ -71,9 +67,10 @@ function ResponsiveDrawer(props) {
             </List>
           </Collapse>
           <Divider />
+          {/* ///////////////////////////////////////// */}
           <ListItem>
-            <ListItemText primary="Light mode"/>
-            <Switch/>
+            <ListItemText primary="Dark mode"/>
+            <Switch onChange={event => props.setMode(props.mode === "light" ? "dark" : "light")} />
           </ListItem>
       </List>
       <Divider />
@@ -84,7 +81,6 @@ function ResponsiveDrawer(props) {
 
   return (
     <Box sx={{ display: 'flex', minHeight: "100vh",}}>
-      {/* <CssBaseline /> */}
       <AppBar
         position="fixed"
         sx={{
@@ -102,7 +98,12 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ display:{sm: "none",}}}
+            >
             React projects
           </Typography>
         </Toolbar>

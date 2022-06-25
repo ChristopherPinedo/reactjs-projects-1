@@ -1,0 +1,20 @@
+{
+  "navegacion" : [
+    {
+      "titulo": "Mis datos",
+      "ruta": "/mis-datos"
+    },
+    {
+      "titulo": "Conocimientos",
+      "ruta": "/conocimientos"
+    },
+    {
+      "titulo": "Experiencia",
+      "ruta": "/experiencia"
+    },
+    {
+      "titulo": "Proyectos",
+      "ruta": "/proyectos"
+    }
+  ]
+}

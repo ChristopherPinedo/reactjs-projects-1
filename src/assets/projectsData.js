@@ -1,36 +1,8 @@
-const projectsData = {
-  escuelas: {
-    personal: {
-      portfolio: {
-        title: "",
-        description: "",
-        tecnologies: [],
-        concepts: [],
-      },
-      loginForm: {
-        title: "",
-        description: "",
-        tecnologies: [],
-        concepts: [],
-      },
-    },
-    platzi: {
-      todoApp: {
-        title: "",
-        description: "",
-        tecnologies: [],
-        concepts: [],
-      },
-      movieDbApp: {
-        title: "",
-        description: "",
-        tecnologies: [],
-        concepts: [],
-      },
-    },
-  },
-  tecnologias: {},
-  conceptos: {},
-};
+const navigation = [
+  {
+    titulo: "Proyectos",
+    ruta: "/proyectos",
+  }
+];
 
-export default projectsData
+export default navigation

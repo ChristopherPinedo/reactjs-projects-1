@@ -11,19 +11,22 @@ import {
   Chip,
   } from '@mui/material/';
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-});
-
 function App() {
+
+  const [mode, setMode] = React.useState('light');
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
+
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <ResponsiveDrawer>
+      <ResponsiveDrawer mode={mode} setMode={setMode}>
         <Box sx={{
-          bgcolor: "grey.800",
+          bgcolor: "background.default",
           minHeight: "90%",
           display: 'flex',
           flexDirection: 'column',
