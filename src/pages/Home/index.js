@@ -12,9 +12,9 @@ function Home() {
       gap: 6,
       padding: 4,
     }}>
-      {/* <Typography variant="p">
-        Compendio de proyectos basados en react con distintos stacks y metodologias de diferentes escuelas.
-      </Typography> */}
+      <Typography variant="h5">
+        Compendio de proyectos desarrollados por Christopher Pinedo
+      </Typography>
       <Box sx={{width: "100%"}}>
         <Typography variant="h6" mb={2}>Tecnologias</Typography>
         <Box sx={{
@@ -45,7 +45,7 @@ function Home() {
           <Chip label="Concepto 4"/>
         </Box>
       </Box>
-      <Box width="100%">
+      {/* <Box width="100%">
         <Typography variant="h6" mb={2}>Escuelas</Typography>
         <Box sx={{
           display: "flex",
@@ -58,7 +58,7 @@ function Home() {
           <Chip label="Escuela 3"/>
           <Chip label="Escuela 4"/>
         </Box>
-      </Box>
+      </Box> */}
     </Box>
   )
 }
