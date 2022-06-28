@@ -4,21 +4,24 @@ import Box from '@mui/material/Box';
 // import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import {LogoDev, LightMode, StarBorder, ExpandLess, ExpandMore} from '@mui/icons-material';
-import projectsData from '../assets/projectsData';
 import { Collapse, ListSubheader, Switch } from '@mui/material';
+
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
+import ArticleIcon from '@mui/icons-material/Article';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+
+import { Link as RouterLink } from 'react-router-dom';
+
+import navigation from '../assets/navigation';
 
 const drawerWidth = 240;
 
@@ -35,7 +38,6 @@ function ResponsiveDrawer(props) {
     setOpen(!open);
   }
 
-  console.log(projectsData.map(ele => console.log(ele)))
 
   const drawer = (
     <div>
@@ -45,14 +47,34 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List>
           {
-            projectsData.map((element, index) => {
-              return(
-              <ListSubheader Key={index}>{element.titulo}</ListSubheader>
-              )
-            })
+            <>
+              <ListItemButton component={RouterLink} to="/" >
+                <ListItemIcon> <HomeIcon/> </ListItemIcon>
+                <ListItemText primary="Home" />
+              </ListItemButton>
+              {
+                navigation.map((element, index) => {
+                  return(
+                    <>
+                      <ListSubheader key={index} >{element.title}</ListSubheader>
+                      {element.content.map((element1, index1) => {
+                        return (
+                          <>
+                            <ListItemButton key={index1} component={RouterLink} to={element1.route} >
+                              <ListItemIcon> <ArticleIcon/> </ListItemIcon>
+                              <ListItemText primary={element1.title} />
+                            </ListItemButton>
+                          </>
+                        )
+                      })}
+                    </>
+                  )
+                })
+              }
+            </>
           }
         {/* ///////////////////////////////////////// */}
-          <ListSubheader>
+          {/* <ListSubheader>
             Escuelas
           </ListSubheader>
           <ListItemButton onClick={handleClick}>
@@ -65,11 +87,11 @@ function ResponsiveDrawer(props) {
                 <ListItemText primary="Starred" />
               </ListItemButton>
             </List>
-          </Collapse>
-          <Divider />
+          </Collapse> */}
           {/* ///////////////////////////////////////// */}
+          <Divider />
           <ListItem>
-            <ListItemText primary="Dark mode"/>
+            <ListItemIcon> <DarkModeIcon/> </ListItemIcon>
             <Switch onChange={event => props.setMode(props.mode === "light" ? "dark" : "light")} />
           </ListItem>
       </List>
@@ -110,7 +132,7 @@ function ResponsiveDrawer(props) {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { sm: drawerWidth}, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
