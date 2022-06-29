@@ -4,7 +4,7 @@ const navigation = [
     route: "/proyectos",
     content: [
       {
-        title: "To Do App",
+        title: "To-Do App",
         route:"/todoapp",
         description: "Lorem ipsum Proyecto 1",
       },

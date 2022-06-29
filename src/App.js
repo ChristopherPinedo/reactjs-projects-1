@@ -10,14 +10,14 @@ function App() {
 
   const [mode, setMode] = React.useState('light');
 
-  const darkTheme = createTheme({
+  const globalTheme = createTheme({
     palette: {
       mode: mode,
     },
   });
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={globalTheme}>
       <CssBaseline />
       <HashRouter>
         <Routes>
