@@ -15,7 +15,6 @@ function ToDoApp() {
       <Stack
       direction={{sm: "column", md: "row"}}
       spacing={{xs: 1, md: 4}}
-      divider={<Divider />}
       >
         <Box>
           <TodoCounter />
