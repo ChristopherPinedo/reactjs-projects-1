@@ -26,6 +26,10 @@ import navigation from '../assets/navigation';
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
+
+  const elementRef = React.useRef(null);
+  console.log(elementRef.current?.clientHeight);
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [open, setOpen] = React.useState(false);
@@ -37,7 +41,6 @@ function ResponsiveDrawer(props) {
 
     setOpen(!open);
   }
-
 
   const drawer = (
     <div>
@@ -109,6 +112,7 @@ function ResponsiveDrawer(props) {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
+        ref={elementRef}
       >
         <Toolbar>
           <IconButton
@@ -166,8 +170,10 @@ function ResponsiveDrawer(props) {
         component="main"
         sx={{ flexGrow: 1, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
-        <Toolbar />
-        {props.children}
+        <Toolbar/>
+        <Box sx={{height: `calc(100vh - ${elementRef.current?.clientHeight}px)` }}>
+          {props.children}
+        </Box>
       </Box>
     </Box>
   );
