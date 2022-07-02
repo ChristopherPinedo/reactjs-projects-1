@@ -5,7 +5,7 @@ function Home() {
   return (
     <Box sx={{
       bgcolor: "background.default",
-      minHeight: "90%",
+      minHeight: 1,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',

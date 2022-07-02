@@ -22,6 +22,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { Link as RouterLink } from 'react-router-dom';
 
 import navigation from '../assets/navigation';
+import jsonData from '../datos/navegacion.json';
 
 const drawerWidth = 240;
 
@@ -41,6 +42,9 @@ function ResponsiveDrawer(props) {
 
     setOpen(!open);
   }
+
+  console.log(jsonData)
+  // console.log(JSON.parse(jsonData));
 
   const drawer = (
     <div>
@@ -112,7 +116,6 @@ function ResponsiveDrawer(props) {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
-        ref={elementRef}
       >
         <Toolbar>
           <IconButton
@@ -171,7 +174,9 @@ function ResponsiveDrawer(props) {
         sx={{ flexGrow: 1, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar/>
-        <Box sx={{height: `calc(100vh - ${elementRef.current?.clientHeight}px)` }}>
+        {/* 02/07/22 - Pospuesto - No encontre a quien refereciar con useRef */}
+        {/* <Box sx={{height: `calc(100vh - ${elementRef.current?.clientHeight}px)` }}> */}
+        <Box sx={{height: `calc(100vh - 64px)`}}>
           {props.children}
         </Box>
       </Box>

@@ -20,22 +20,31 @@ function ToDoApp() {
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
 
+  
+
   return (
-    <Stack
+    <Container sx={{height: 1, position: "relative"}}>
+      <Stack
       direction={{xs: "column", md: "row"}}
       spacing={{xs: 1, md: 4}}
       divider={<Divider flexItem variant="middle" orientation={matchesMD ? "vertical" : "horizontal"} />}
       sx={{
         height: 1,
-        alignItems: "center",
-        justifyContent: "Center",
+        alignItems: {xs: "center", md: "flex-start"},
+        justifyContent: {xs: "flex-start", md: "center"},
+        padding: 4,
       }}
-    >
-        <Box>
+      >
+        <Stack
+        direction="column"
+        spacing={1}
+        >
           <TodoCounter />
           <TodoSearch />
-          <CreateTodoButton />
-        </Box>
+          {matchesMD
+          ? null
+          : <CreateTodoButton sx={{position: "relative"}} /> }
+        </Stack>
         <Stack
         spacing={{xs: 1, md: 2}}
         >
@@ -50,8 +59,17 @@ function ToDoApp() {
             )
           } )}
         </Stack>
-
-    </ Stack>
+      </ Stack>
+      {matchesMD
+      ? <CreateTodoButton
+        sx={{
+          position: "absolute",
+          right: 2,
+          left: 2,
+        }}
+        />
+      : null}
+    </Container>
   )
 }
 

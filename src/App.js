@@ -14,6 +14,15 @@ function App() {
     palette: {
       mode: mode,
     },
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 700,
+        md: 900,
+        lg: 1200,
+        xl: 1536,
+      }
+    }
   });
 
   return (
@@ -30,9 +39,6 @@ function App() {
             </ResponsiveDrawer>
           } />
         </Routes>
-        {/* <ResponsiveDrawer mode={mode} setMode={setMode}>
-          <Home/>
-        </ResponsiveDrawer> */}
       </HashRouter>
     </ThemeProvider>
   )
