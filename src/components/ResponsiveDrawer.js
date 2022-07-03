@@ -21,7 +21,6 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 import { Link as RouterLink } from 'react-router-dom';
 
-import navigation from '../assets/navigation';
 import jsonData from '../datos/navegacion.json';
 
 const drawerWidth = 240;
@@ -29,7 +28,7 @@ const drawerWidth = 240;
 function ResponsiveDrawer(props) {
 
   const elementRef = React.useRef(null);
-  console.log(elementRef.current?.clientHeight);
+  // console.log(elementRef.current?.clientHeight);
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -42,9 +41,6 @@ function ResponsiveDrawer(props) {
 
     setOpen(!open);
   }
-
-  console.log(jsonData)
-  // console.log(JSON.parse(jsonData));
 
   const drawer = (
     <div>
@@ -60,7 +56,7 @@ function ResponsiveDrawer(props) {
                 <ListItemText primary="Home" />
               </ListItemButton>
               {
-                navigation.map((element, index) => {
+                jsonData.navigation.map((element, index) => {
                   return(
                     <>
                       <ListSubheader key={index} >{element.title}</ListSubheader>

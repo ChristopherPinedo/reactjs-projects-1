@@ -1,12 +1,20 @@
 import React from 'react';
-import { Fab } from '@mui/material';
+import { Button, Fab } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 
-const CreateTodoButton = () => {
+const CreateTodoButton = ({style, button}) => {
   return (
-    <Fab color="primary" aria-label="add">
-      <AddIcon />
-    </Fab>
+    button 
+    ? (
+      <Button
+      sx={style}
+      variant="contained"
+      startIcon={<AddIcon/>}
+      >Agregar</Button>
+    )
+    : (<Fab sx={style} color="primary">
+        <AddIcon />
+      </Fab>)
   )
 }
 

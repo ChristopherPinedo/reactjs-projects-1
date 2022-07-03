@@ -1,5 +1,12 @@
-import { Stack, Typography } from '@mui/material'
-import React from 'react'
+import React from 'react';
+import { Stack, Typography } from '@mui/material';
+import { todo } from '../assets/todo'
+
+const completedTodos = (obj) => {
+  let counter = 0
+  obj.map( item => item.completed && counter++)
+  return counter
+}
 
 const TodoCounter = (props) => {
   return (
@@ -9,7 +16,7 @@ const TodoCounter = (props) => {
     alignItems="center"
     >
       <Typography variant="h4">To-Do App</Typography>
-      <Typography variant="h6"> Completadas 3 de 5 </Typography>
+      <Typography variant="h6"> Completadas {completedTodos(todo)} de {todo.length} </Typography>
     </Stack>
   )
 }

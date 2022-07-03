@@ -20,33 +20,37 @@ function ToDoApp() {
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
 
-  
 
   return (
     <Container sx={{height: 1, position: "relative"}}>
       <Stack
       direction={{xs: "column", md: "row"}}
-      spacing={{xs: 1, md: 4}}
+      spacing={{xs: 4, md: 4}}
       divider={<Divider flexItem variant="middle" orientation={matchesMD ? "vertical" : "horizontal"} />}
       sx={{
         height: 1,
         alignItems: {xs: "center", md: "flex-start"},
-        justifyContent: {xs: "flex-start", md: "center"},
+        justifyContent: {xs: "flex-start", md: "space-evenly"},
         padding: 4,
       }}
       >
+        {/* ------------- TODO HEADER */}
         <Stack
         direction="column"
-        spacing={1}
+        spacing={2}
+        alignItems="center"
         >
           <TodoCounter />
           <TodoSearch />
           {matchesMD
-          ? null
-          : <CreateTodoButton sx={{position: "relative"}} /> }
+          ? <CreateTodoButton button style={{position: "static", width: "75%"}} />
+          : null}
         </Stack>
+        {/* ------------- TODO BODY */}
         <Stack
-        spacing={{xs: 1, md: 2}}
+        minWidth="60%"
+        spacing={4}
+        alignItems="center"
         >
           {todo.map(({title, description, completed}, index) => {
             return (
@@ -61,14 +65,14 @@ function ToDoApp() {
         </Stack>
       </ Stack>
       {matchesMD
-      ? <CreateTodoButton
-        sx={{
-          position: "absolute",
-          right: 2,
-          left: 2,
-        }}
-        />
-      : null}
+      ? null
+      : <CreateTodoButton
+      style={{
+        position: "absolute",
+        right: "1rem",
+        bottom: "1rem",
+      }}
+      />}
     </Container>
   )
 }

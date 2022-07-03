@@ -19,6 +19,16 @@ const todo = [
     description: "4 - Lorem Ipsum dolor sit amet",
     completed: false,
   },
+  {
+    title: "Todo 5",
+    description: "5 - Lorem Ipsum dolor sit amet",
+    completed: false,
+  },
+  {
+    title: "Todo 6",
+    description: "6 - Lorem Ipsum dolor sit amet",
+    completed: false,
+  },
 ];
 
 export { todo }

@@ -1,20 +1,20 @@
 {
-  "navegacion" : [
+  "navigation" : [
     {
-      "titulo": "Mis datos",
-      "ruta": "/mis-datos"
-    },
-    {
-      "titulo": "Conocimientos",
-      "ruta": "/conocimientos"
-    },
-    {
-      "titulo": "Experiencia",
-      "ruta": "/experiencia"
-    },
-    {
-      "titulo": "Proyectos",
-      "ruta": "/proyectos"
+      "title": "Proyectos",
+      "route": "/proyectos",
+      "content": [
+        {
+          "title": "To-Do App",
+          "route":"/todoapp",
+          "description": "Lorem ipsum Proyecto 1"
+        },
+        {
+          "title": "Proyecto 2",
+          "route":"/proyecto-2",
+          "description": "Lorem ipsum Proyecto 2"
+        }
+      ]
     }
   ]
 }
