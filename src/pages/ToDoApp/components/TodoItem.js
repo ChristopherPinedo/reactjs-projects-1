@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Box, IconButton, Paper, Typography } from '@mui/material'
 
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
+import { todo } from '../assets/todo';
 
-const TodoItem = ({title, description, completed}) => {
+const TodoItem = ({title, description, completed, index}) => {
 
-  const [ check, setCheck ] = useState(false);
+  const [ check, setCheck ] = useState(completed);
 
-  const handleCheck = () => setCheck(!check);
+  const handleCheck = () => {
+    setCheck(!check);
+    // todo[index].completed = check;
+    console.log(check);
+  };
 
   return (
     <Paper
@@ -23,13 +28,17 @@ const TodoItem = ({title, description, completed}) => {
         gap: 2,
         p: 2,
       }}>
-      <IconButton position="relative"  onClick={handleCheck} >
-        <CheckCircleIcon fontSize="large" color={check ? "success" : "disabled"} />
-      </IconButton>
+      <Box sx= {{flexGrow: 1}}>
+        <IconButton
+          position="relative"
+          onClick={handleCheck} >
+          <CheckCircleIcon fontSize="large" color={check ? "success" : "disabled"} />
+        </IconButton>
+      </Box>
       <Box
         sx={{
           display: "flex",
-          flexGrow: 3,
+          flexGrow: 11,
           flexDirection: "column"
         }}>
         <Typography variant='h6'> {title} </Typography>

@@ -20,7 +20,6 @@ function ToDoApp() {
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
 
-
   return (
     <Container sx={{height: 1, position: "relative"}}>
       <Stack
@@ -56,6 +55,7 @@ function ToDoApp() {
             return (
               <TodoItem
               key={index + title}
+              index={index}
               title={title}
               description={description}
               completed={completed}
@@ -68,7 +68,7 @@ function ToDoApp() {
       ? null
       : <CreateTodoButton
       style={{
-        position: "absolute",
+        position: "fixed",
         right: "1rem",
         bottom: "1rem",
       }}

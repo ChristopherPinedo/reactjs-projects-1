@@ -2,7 +2,7 @@ const todo = [
   {
     title: "Todo 1",
     description: "1 - Lorem Ipsum dolor sit amet",
-    completed: true,
+    completed: false,
   },
   {
     title: "Todo 2",
