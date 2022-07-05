@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TodoCounter } from './components/TodoCounter';
 import { TodoSearch } from './components/TodoSearch';
 import { TodoItem } from './components/TodoItem';
 import { CreateTodoButton } from './components/CreateTodoButton';
-import { todo } from './assets/todo';
+import { defaultTodos } from './assets/todos';
 
 import {
   Container,
   Divider,
-  Stack,
-  Box
+  Stack
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -17,8 +16,27 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 function ToDoApp() {
 
+  const [todos, setTodos] = useState(defaultTodos)
+  const [ searchValue, setSearchValue ] = useState("");
+
+  const completedTodos = todos.filter( todo => !!todo.completed ).length;
+  const totalTodos = todos.length;
+
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
+
+  let searchedTodos = [];
+
+  if(searchValue.length >= 1) {
+    searchedTodos = todos.filter(todo => {
+      const searchText = searchValue.toLowerCase();
+      const todoText = todo.title.toLowerCase();
+      return todoText.includes(searchText);
+    });
+
+  } else {
+    searchedTodos = todos;
+  }
 
   return (
     <Container sx={{height: 1, position: "relative"}}>
@@ -39,8 +57,12 @@ function ToDoApp() {
         spacing={2}
         alignItems="center"
         >
-          <TodoCounter />
-          <TodoSearch />
+          <TodoCounter
+          totalTodos={totalTodos}
+          completedTodos={completedTodos} />
+          <TodoSearch
+          searchValue={searchValue}
+          setSearchValue={setSearchValue} />
           {matchesMD
           ? <CreateTodoButton button style={{position: "static", width: "75%"}} />
           : null}
@@ -51,14 +73,15 @@ function ToDoApp() {
         spacing={4}
         alignItems="center"
         >
-          {todo.map(({title, description, completed}, index) => {
+          {searchedTodos.map(({title, description, completed}, index) => {
             return (
               <TodoItem
               key={index + title}
-              index={index}
               title={title}
               description={description}
               completed={completed}
+              todos={todos}
+              setTodos={setTodos}
               />
             )
           } )}

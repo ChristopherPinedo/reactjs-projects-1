@@ -4,16 +4,31 @@ import { Box, IconButton, Paper, Typography } from '@mui/material'
 
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
-import { todo } from '../assets/todo';
 
-const TodoItem = ({title, description, completed, index}) => {
+const TodoItem = ({title, description, completed, todos, setTodos}) => {
 
-  const [ check, setCheck ] = useState(completed);
+  // const [ check, setCheck ] = useState(completed);
 
-  const handleCheck = () => {
-    setCheck(!check);
-    // todo[index].completed = check;
-    console.log(check);
+  const handleComplete = (text) => {
+    // setCheck(!check);
+    const todoIndex = todos.findIndex(todo => todo.title === text);
+    const newTodos = [ ...todos ];
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+    setTodos(newTodos);
+
+    console.log(`TODO: ${title} completed: ${completed}`)
+  };
+
+  const handleDelete = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.title === text);
+    // const newTodos = [ ...todos ];
+    // newTodos.splice(todoIndex, 1);
+
+    const newTodos = todos.filter(todo => todo.title !== text);
+
+    setTodos(newTodos);
+
+    console.log(`Borraste el TODO: ${title}`)
   };
 
   return (
@@ -31,8 +46,11 @@ const TodoItem = ({title, description, completed, index}) => {
       <Box sx= {{flexGrow: 1}}>
         <IconButton
           position="relative"
-          onClick={handleCheck} >
-          <CheckCircleIcon fontSize="large" color={check ? "success" : "disabled"} />
+          onClick={() => handleComplete(title)} >
+          <CheckCircleIcon fontSize="large"
+          sx={{
+            color: `${completed ? "success.light" : "default"}`
+          }} />
         </IconButton>
       </Box>
       <Box
@@ -45,12 +63,18 @@ const TodoItem = ({title, description, completed, index}) => {
         <Typography variant='p'> {description} </Typography>
       </Box>
       <IconButton
+        onClick={ () => handleDelete(title) }
         sx={{
           position: "absolute",
-          right: "-1rem",
-          top: "-1rem",
+          right: "-1.2rem",
+          top: "-1.2rem",
           }} >
-        <CancelIcon fontSize="large" color="error" />
+        <CancelIcon fontSize="large" sx={{
+          color: "error.light",
+          "&:hover": {
+            color: "error.dark",
+          }
+        }} />
       </IconButton>
     </Paper>
   )

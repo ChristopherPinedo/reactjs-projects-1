@@ -1,4 +1,4 @@
-const todo = [
+const defaultTodos = [
   {
     title: "Todo 1",
     description: "1 - Lorem Ipsum dolor sit amet",
@@ -7,7 +7,7 @@ const todo = [
   {
     title: "Todo 2",
     description: "2 - Lorem Ipsum dolor sit amet",
-    completed: false,
+    completed: true,
   },
   {
     title: "Todo 3",
@@ -17,12 +17,12 @@ const todo = [
   {
     title: "Todo 4",
     description: "4 - Lorem Ipsum dolor sit amet",
-    completed: false,
+    completed: true,
   },
   {
     title: "Todo 5",
     description: "5 - Lorem Ipsum dolor sit amet",
-    completed: false,
+    completed: true,
   },
   {
     title: "Todo 6",
@@ -31,4 +31,4 @@ const todo = [
   },
 ];
 
-export { todo }
+export { defaultTodos }

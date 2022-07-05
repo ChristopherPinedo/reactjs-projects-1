@@ -1,13 +1,19 @@
 import { InputAdornment, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
-import React from 'react'
+import React, { useState } from 'react'
 
-const TodoSearch = () => {
+const TodoSearch = ({searchValue, setSearchValue}) => {
+
+  const onSearchValueChange = (event) => {
+    setSearchValue(event.target.value);
+    console.log(event.target.value);
+  };
+
   return (
     <TextField
       fullWidth
       id="input-with-icon-textfield"
-      placeholder="Buscar"
+      placeholder="Buscar..."
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
@@ -16,6 +22,8 @@ const TodoSearch = () => {
         ),
       }}
       variant="outlined"
+      value={searchValue}
+      onChange={onSearchValueChange}
     />
   )
 }
