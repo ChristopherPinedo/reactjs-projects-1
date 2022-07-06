@@ -64,7 +64,11 @@ function ToDoApp() {
           searchValue={searchValue}
           setSearchValue={setSearchValue} />
           {matchesMD
-          ? <CreateTodoButton button style={{position: "static", width: "75%"}} />
+          ? <CreateTodoButton
+            button
+            style={{position: "static", width: "75%"}}
+            todos={todos}
+            setTodos={setTodos} />
           : null}
         </Stack>
         {/* ------------- TODO BODY */}
@@ -95,6 +99,8 @@ function ToDoApp() {
         right: "1rem",
         bottom: "1rem",
       }}
+      todos={todos}
+      setTodos={setTodos}
       />}
     </Container>
   )
