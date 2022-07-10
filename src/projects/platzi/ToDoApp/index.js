@@ -3,7 +3,7 @@ import { TodoCounter } from './components/TodoCounter';
 import { TodoSearch } from './components/TodoSearch';
 import { TodoItem } from './components/TodoItem';
 import { CreateTodoButton } from './components/CreateTodoButton';
-import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { useLocalStorage } from '../../../hooks/useLocalStorage';
 import {
   Container,
   Divider,
@@ -14,17 +14,6 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 function ToDoApp() {
-
-  // const localTodos = localStorage.getItem("TODOS_V1")
-  // let parsedTodos = []
-  // if (localTodos) {
-  //   parsedTodos = JSON.parse(localTodos)
-  // } else {
-  //   localStorage.setItem("TODOS_V1", "[]")
-  // }
-
-  // const [todos, setTodos] = useState(parsedTodos)
-
   const {
     items: todos,
     saveItems: setTodos,

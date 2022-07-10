@@ -1,0 +1,37 @@
+{
+  "navigation" : [
+    {
+      "title": "PERSONAL",
+      "route": "/personal",
+      "content": [
+        {
+          "title": "Project 1",
+          "route":"/project1",
+          "description": "Lorem ipsum Project 1"
+        }
+      ]
+    },
+    {
+      "title": "PLATZI",
+      "route": "/platzi",
+      "content": [
+        {
+          "title": "Todo App",
+          "route":"/todoApp",
+          "description": "Aplicación de tareas"
+        }
+      ]
+    },
+    {
+      "title": "FRONTENDMENTOR",
+      "route": "/frontendmentor",
+      "content": [
+        {
+          "title": "Project 1",
+          "route":"/project1",
+          "description": "Lorem ipsum Project 1"
+        }
+      ]
+    }
+  ]
+}

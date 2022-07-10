@@ -3,8 +3,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ResponsiveDrawer from "./components/ResponsiveDrawer";
 import { CssBaseline } from '@mui/material/';
   import { HashRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import ToDoApp from './pages/ToDoApp';
+import Home from './projects/personal/Home';
+import ToDoApp from './projects/platzi/ToDoApp';
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
             <ResponsiveDrawer mode={mode} setMode={setMode}>
               <Routes>
                 <Route exact path="/" element={<Home/>} />
-                <Route path="/todoapp" element={<ToDoApp/>} />
+                <Route path="/todoApp" element={<ToDoApp/>} />
               </Routes>
             </ResponsiveDrawer>
           } />

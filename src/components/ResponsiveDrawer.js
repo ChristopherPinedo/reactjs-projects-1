@@ -21,7 +21,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 import { Link as RouterLink } from 'react-router-dom';
 
-import jsonData from '../datos/navegacion.json';
+import jsonData from '../datos/navigation.json';
 
 const drawerWidth = 240;
 
@@ -45,7 +45,7 @@ function ResponsiveDrawer(props) {
   const drawer = (
     <div>
       <Toolbar sx={{justifyContent: "center" }} >
-        <Typography variant="h6">React projects</Typography>
+        <Typography variant="h6">Portafolio React V1</Typography>
       </Toolbar>
       <Divider />
       <List>
@@ -53,7 +53,7 @@ function ResponsiveDrawer(props) {
             <>
               <ListItemButton component={RouterLink} to="/" >
                 <ListItemIcon> <HomeIcon/> </ListItemIcon>
-                <ListItemText primary="Home" />
+                <ListItemText primary="Inicio" />
               </ListItemButton>
               {
                 jsonData.navigation.map((element, index) => {
@@ -129,7 +129,7 @@ function ResponsiveDrawer(props) {
             component="div"
             sx={{ display:{sm: "none",}}}
             >
-            React projects
+            Portafolio React V1
           </Typography>
         </Toolbar>
       </AppBar>
@@ -167,12 +167,16 @@ function ResponsiveDrawer(props) {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        sx={{
+          flexGrow: 1,
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          height: "100vh"
+        }}
       >
         <Toolbar/>
         {/* 02/07/22 - Pospuesto - No encontre a quien refereciar con useRef */}
         {/* <Box sx={{height: `calc(100vh - ${elementRef.current?.clientHeight}px)` }}> */}
-        <Box sx={{height: `calc(100vh - 64px)`}}>
+        <Box >
           {props.children}
         </Box>
       </Box>
