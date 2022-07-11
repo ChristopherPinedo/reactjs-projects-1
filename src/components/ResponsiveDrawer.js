@@ -55,6 +55,7 @@ function ResponsiveDrawer(props) {
                 <ListItemIcon> <HomeIcon/> </ListItemIcon>
                 <ListItemText primary="Inicio" />
               </ListItemButton>
+              <Divider />
               {
                 jsonData.navigation.map((element, index) => {
                   return(

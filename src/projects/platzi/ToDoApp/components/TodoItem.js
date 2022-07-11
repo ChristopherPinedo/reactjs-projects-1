@@ -41,16 +41,16 @@ const TodoItem = ({title, description, completed, todos, setTodos}) => {
         gap: 2,
         p: 2,
       }}>
-      <IconButton
-        sx= {{flexGrow: 1}}
-        position="relative"
-        onClick={() => handleComplete(title)} >
-        <CheckCircleIcon fontSize="large"
-        sx={{
-          color: `${completed ? "success.light" : "default"}`
-        }} />
-      </IconButton>
-
+      <Box sx= {{flexGrow: 1}} >
+        <IconButton
+          position="relative"
+          onClick={() => handleComplete(title)} >
+          <CheckCircleIcon fontSize="large"
+          sx={{
+            color: `${completed ? "success.light" : "default"}`
+          }} />
+        </IconButton>
+      </Box>
       <Box
         sx={{
           display: "flex",
