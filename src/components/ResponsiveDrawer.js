@@ -15,13 +15,15 @@ import { Collapse, ListSubheader, Switch } from '@mui/material';
 
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import HomeIcon from '@mui/icons-material/Home';
+import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
 import ArticleIcon from '@mui/icons-material/Article';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 import { Link as RouterLink } from 'react-router-dom';
 
 import jsonData from '../datos/navigation.json';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 const drawerWidth = 240;
 
@@ -45,17 +47,20 @@ function ResponsiveDrawer(props) {
   const drawer = (
     <div>
       <Toolbar sx={{justifyContent: "center" }} >
-        <Typography variant="h6">Portafolio React V1</Typography>
+        <Typography variant="h6">Christopher Pinedo</Typography>
       </Toolbar>
       <Divider />
       <List>
           {
             <>
               <ListItemButton component={RouterLink} to="/" >
-                <ListItemIcon> <HomeIcon/> </ListItemIcon>
-                <ListItemText primary="Inicio" />
+                <ListItemIcon> <AccountBoxIcon/> </ListItemIcon>
+                <ListItemText primary="Sobre mi" />
               </ListItemButton>
-              <Divider />
+              <ListItemButton component={RouterLink} to="/projects" >
+                <ListItemIcon> <IntegrationInstructionsIcon/> </ListItemIcon>
+                <ListItemText primary="Proyectos" />
+              </ListItemButton>
               {
                 jsonData.navigation.map((element, index) => {
                   return(
@@ -78,9 +83,6 @@ function ResponsiveDrawer(props) {
             </>
           }
         {/* ///////////////////////////////////////// */}
-          {/* <ListSubheader>
-            Escuelas
-          </ListSubheader>
           <ListItemButton onClick={handleClick}>
             <ListItemText primary="Inbox" />
             {open ? <ExpandLess /> : <ExpandMore />}
@@ -91,7 +93,7 @@ function ResponsiveDrawer(props) {
                 <ListItemText primary="Starred" />
               </ListItemButton>
             </List>
-          </Collapse> */}
+          </Collapse>
           {/* ///////////////////////////////////////// */}
           <Divider />
           <ListItem>
@@ -130,7 +132,7 @@ function ResponsiveDrawer(props) {
             component="div"
             sx={{ display:{sm: "none",}}}
             >
-            Portafolio React V1
+            Portafolio React
           </Typography>
         </Toolbar>
       </AppBar>

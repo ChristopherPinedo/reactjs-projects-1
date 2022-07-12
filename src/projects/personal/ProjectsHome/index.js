@@ -1,7 +1,7 @@
 import { Box, Chip, Typography } from '@mui/material'
 import React from 'react'
 
-function Home() {
+function ProjectsHome() {
   return (
     <Box sx={{
       bgcolor: "background.default",
@@ -63,4 +63,4 @@ function Home() {
   )
 }
 
-export default Home
+export default ProjectsHome

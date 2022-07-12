@@ -5,19 +5,19 @@
       "route": "/personal",
       "content": [
         {
-          "title": "Project 1",
-          "route":"/project1",
-          "description": "Lorem ipsum Project 1"
+          "title": "Portfolio",
+          "route":"/personal/portfolio",
+          "description": "Portafolio de proyectos"
         }
       ]
     },
     {
-      "title": "PLATZI",
+      "title": "Platzi",
       "route": "/platzi",
       "content": [
         {
           "title": "Todo App",
-          "route":"/todoApp",
+          "route":"/platzi/todoApp",
           "description": "Aplicación de tareas"
         }
       ]
@@ -28,7 +28,7 @@
       "content": [
         {
           "title": "Project 1",
-          "route":"/project1",
+          "route":"/frontendmentor/project1",
           "description": "Lorem ipsum Project 1"
         }
       ]
