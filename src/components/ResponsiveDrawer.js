@@ -54,18 +54,22 @@ function ResponsiveDrawer(props) {
           {
             <>
               <ListItemButton component={RouterLink} to="/" >
-                <ListItemIcon> <AccountBoxIcon/> </ListItemIcon>
                 <ListItemText primary="Sobre mi" />
+                <ListItemIcon sx={{justifyContent: "end"}} >
+                  <AccountBoxIcon/>
+                </ListItemIcon>
               </ListItemButton>
               <ListItemButton component={RouterLink} to="/projects" >
-                <ListItemIcon> <IntegrationInstructionsIcon/> </ListItemIcon>
                 <ListItemText primary="Proyectos" />
+                <ListItemIcon sx={{justifyContent: "end"}} >
+                  <IntegrationInstructionsIcon/>
+                </ListItemIcon>
               </ListItemButton>
               {
                 jsonData.navigation.map((element, index) => {
                   return(
                     <>
-                      <ListSubheader key={index} >{element.title}</ListSubheader>
+                      {/* <ListSubheader key={index} >{element.title}</ListSubheader>
                       {element.content.map((element1, index1) => {
                         return (
                           <>
@@ -75,7 +79,27 @@ function ResponsiveDrawer(props) {
                             </ListItemButton>
                           </>
                         )
-                      })}
+                      })} */}
+
+                      <ListItemButton sx={{pl:4}} key={index} onClick={handleClick}>
+                        <ListItemText primary={element.title} />
+                        {open ? <ExpandLess /> : <ExpandMore />}
+                      </ListItemButton>
+                      <Collapse in={open} timeout="auto" unmountOnExit>
+                        <List component="div" disablePadding>
+                          {element.content.map((element1, index1) => {
+                            return (
+                              <ListItemButton
+                              key={index1}
+                              component={RouterLink}
+                              to={element1.route}
+                              sx={{ pl: 6 }}>
+                                <ListItemText primary={element1.title} />
+                              </ListItemButton>
+                            )
+                          })}
+                        </List>
+                      </Collapse>
                     </>
                   )
                 })
@@ -83,22 +107,11 @@ function ResponsiveDrawer(props) {
             </>
           }
         {/* ///////////////////////////////////////// */}
-          <ListItemButton onClick={handleClick}>
-            <ListItemText primary="Inbox" />
-            {open ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText primary="Starred" />
-              </ListItemButton>
-            </List>
-          </Collapse>
-          {/* ///////////////////////////////////////// */}
           <Divider />
-          <ListItem>
-            <ListItemIcon> <DarkModeIcon/> </ListItemIcon>
-            <Switch onChange={event => props.setMode(props.mode === "light" ? "dark" : "light")} />
+          <ListItem sx={{justifyContent: "space-between" }}>
+            <Switch
+            onChange={event => props.setMode(props.mode === "light" ? "dark" : "light")} />
+            <ListItemIcon sx={{justifyContent: "end"}} > <DarkModeIcon/> </ListItemIcon>
           </ListItem>
       </List>
       <Divider />

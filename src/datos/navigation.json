@@ -1,7 +1,7 @@
 {
   "navigation" : [
     {
-      "title": "PERSONAL",
+      "title": "Personal",
       "route": "/personal",
       "content": [
         {
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "title": "FRONTENDMENTOR",
+      "title": "Frontendmentor",
       "route": "/frontendmentor",
       "content": [
         {
