@@ -109,6 +109,7 @@ function ResponsiveDrawer(props) {
         {/* ///////////////////////////////////////// */}
           <Divider />
           <ListItem sx={{justifyContent: "space-between" }}>
+            <ListItemText primary="Dark mode" />
             <Switch
             onChange={event => props.setMode(props.mode === "light" ? "dark" : "light")} />
             <ListItemIcon sx={{justifyContent: "end"}} > <DarkModeIcon/> </ListItemIcon>

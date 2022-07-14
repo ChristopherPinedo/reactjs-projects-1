@@ -44,7 +44,7 @@ function ToDoApp() {
     <Container sx={{height: 1, position: "relative"}}>
       <Stack
       direction={{xs: "column", md: "row"}}
-      spacing={{xs: 4, md: 4}}
+      spacing={4}
       divider={<Divider flexItem variant="middle" orientation={matchesMD ? "vertical" : "horizontal"} />}
       sx={{
         height: 1,
