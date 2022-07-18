@@ -33,8 +33,15 @@ const AboutMe = () => {
               <CardMedia
                 component="img"
                 alt="profile image"
-                height="100"
                 image={profileImage}
+                sx={{
+                  height: "120px",
+                  width:"120px",
+                  borderRadius: 1,
+                  mx:1,
+                  my:2,
+                  
+                }}
               />
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
@@ -49,12 +56,15 @@ const AboutMe = () => {
               justifyContent="space-evenly"
               width="100%"
               divider={<Divider orientation="vertical" flexItem />}>
-                <Stack direction="row" sx={{flexGrow:2, justifyContent:"space-evenly"}}>
+                <Stack direction="row" sx={{flexGrow:3, justifyContent:"space-evenly"}}>
                   <IconButton size="large" >
                     <GitHubIcon/>
                   </IconButton>
                   <IconButton size="large">
                     <LinkedInIcon/>
+                  </IconButton>
+                  <IconButton size="large">
+                    <EmailIcon/>
                   </IconButton>
                 </Stack>
                 <Stack  direction="row" sx={{flexGrow:1, justifyContent:"center"}}>
