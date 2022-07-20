@@ -7,6 +7,7 @@ const TodoCounter = ({totalTodos, completedTodos}) => {
     direction="column"
     spacing= {1}
     alignItems="center"
+    minWidth="200px"
     >
       <Typography variant="h4">To do App</Typography>
       <Typography variant="h6"> Completadas {completedTodos} de {totalTodos} </Typography>

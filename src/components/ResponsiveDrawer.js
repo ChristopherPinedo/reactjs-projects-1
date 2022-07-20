@@ -11,7 +11,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Collapse, ListSubheader, Switch } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Collapse, ListSubheader, Switch } from '@mui/material';
 
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -44,10 +44,11 @@ function ResponsiveDrawer(props) {
     setOpen(!open);
   }
 
+
   const drawer = (
     <div>
       <Toolbar sx={{justifyContent: "center" }} >
-        <Typography variant="h6">Christopher Pinedo</Typography>
+        <Typography variant="h6">Portafolio React.js</Typography>
       </Toolbar>
       <Divider />
       <List>
@@ -69,19 +70,7 @@ function ResponsiveDrawer(props) {
                 jsonData.navigation.map((element, index) => {
                   return(
                     <>
-                      {/* <ListSubheader key={index} >{element.title}</ListSubheader>
-                      {element.content.map((element1, index1) => {
-                        return (
-                          <>
-                            <ListItemButton key={index1} component={RouterLink} to={element1.route} >
-                              <ListItemIcon> <ArticleIcon/> </ListItemIcon>
-                              <ListItemText primary={element1.title} />
-                            </ListItemButton>
-                          </>
-                        )
-                      })} */}
-
-                      <ListItemButton sx={{pl:4}} key={index} onClick={handleClick}>
+                      {/* <ListItemButton sx={{pl:4}} key={index} onClick={handleClick}>
                         <ListItemText primary={element.title} />
                         {open ? <ExpandLess /> : <ExpandMore />}
                       </ListItemButton>
@@ -99,7 +88,36 @@ function ResponsiveDrawer(props) {
                             )
                           })}
                         </List>
-                      </Collapse>
+                      </Collapse> */}
+
+                      <Accordion
+                      disableGutters
+                      square
+                      variant="string"
+                      sx={{
+                        "&::before": {height:0},
+                        bgcolor: "inherit"
+                        }}>
+                        <AccordionSummary
+                        expandIcon={<ExpandMore />}
+                        >
+                          <Typography pl={2}>{element.title}</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails p={"0px !important"}>
+                          {element.content.map((element1, index1) => {
+                            return (
+                              <ListItemButton
+                              key={index1}
+                              component={RouterLink}
+                              to={element1.route}
+                              sx={{ pl: 6 }}>
+                                <ListItemText primary={element1.title} />
+                              </ListItemButton>
+                            )
+                          })}
+                        </AccordionDetails>
+                      </Accordion>
+
                     </>
                   )
                 })
@@ -107,15 +125,14 @@ function ResponsiveDrawer(props) {
             </>
           }
         {/* ///////////////////////////////////////// */}
-          <Divider />
-          <ListItem sx={{justifyContent: "space-between" }}>
-            <ListItemText primary="Dark mode" />
-            <Switch
-            onChange={event => props.setMode(props.mode === "light" ? "dark" : "light")} />
-            <ListItemIcon sx={{justifyContent: "end"}} > <DarkModeIcon/> </ListItemIcon>
-          </ListItem>
       </List>
-      <Divider />
+      <ListItem sx={{justifyContent: "space-between" }}>
+        <ListItemText primary="Dark mode" />
+        <Switch
+        onChange={event => props.setMode(props.mode === "light" ? "dark" : "light")} />
+        <ListItemIcon sx={{justifyContent: "end"}} > <DarkModeIcon/> </ListItemIcon>
+      </ListItem>
+
     </div>
   );
 
@@ -146,7 +163,7 @@ function ResponsiveDrawer(props) {
             component="div"
             sx={{ display:{sm: "none",}}}
             >
-            Portafolio React
+            Portafolio React.js
           </Typography>
         </Toolbar>
       </AppBar>

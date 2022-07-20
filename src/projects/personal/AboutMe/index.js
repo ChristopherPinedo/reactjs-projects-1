@@ -9,8 +9,10 @@ import {
   Divider,
   IconButton,
   Stack,
-  Typography
-} from '@mui/material'
+  Typography,
+} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import profileImage from '../../../assets/profileImg.jpg'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -20,16 +22,32 @@ import { Box } from '@mui/system';
 
 const AboutMe = () => {
 
-
-  
+  const theme = useTheme();
+  const matchesLG = useMediaQuery(theme.breakpoints.up('lg'));
   return (
-    <Container sx={{p:{xs:2, md:4}}}>
-      <Stack>
-        <Typography variant='h3' component='h2'>Christopher Pinedo</Typography>
-        <Typography variant='h5' component='h3' gutterBottom>Frontend Developer</Typography>
-        <Stack direction="column">
-          <Card >
-            <Stack direction="row">
+    <Container sx={{p:{xs:2, lg:4}, pt:{xs:4}}}>
+      <Stack
+      alignItems="center"
+      spacing={4}
+      divider={<Divider flexItem variant="middle" orientation="horizontal" />}
+      >
+        <Stack>
+          <Typography variant='h3' component='h2'>Christopher Pinedo</Typography>
+          <Typography variant='h5' component='h3'>Frontend Developer</Typography>
+        </Stack>
+        <Stack
+        direction={{xs:"column", lg:"row"}}
+        spacing={4}
+        divider={<Divider flexItem variant="middle" orientation={matchesLG ? "vertical" : "horizontal"} />}
+        sx={{
+          height: 1,
+          alignItems: {xs: "center", lg: "flex-start"},
+          justifyContent: {xs: "flex-start", lg: "space-evenly"},
+          padding: {xs: 0, lg:4},
+        }}
+        >
+          <Card sx={{maxWidth: "500px"}}>
+            <Stack direction="row" justifyContent="space-between" alignItems="center" >
               <CardMedia
                 component="img"
                 alt="profile image"
@@ -38,13 +56,12 @@ const AboutMe = () => {
                   height: "120px",
                   width:"120px",
                   borderRadius: 1,
-                  mx:1,
-                  my:2,
-                  
+                  m: 2,
+                  mr: 0
                 }}
               />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
+              <CardContent sx={{"&:last-child": {pb:2}}} >
+                <Typography variant="body2" color="text.secondary" >
                 “ Ingeniero de sofware residente en Perú con 2 años de experiencia en desarrollo web especializado en frontend usando React.js ”
                 </Typography>
               </CardContent>
@@ -80,9 +97,6 @@ const AboutMe = () => {
             <Typography variant='h4'>Informacion</Typography>
           </Stack>
         </Stack>
-      </Stack>
-      <Stack>
-
       </Stack>
     </Container>
   )

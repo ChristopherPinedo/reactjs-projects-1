@@ -21,17 +21,6 @@
           "description": "Aplicación de tareas"
         }
       ]
-    },
-    {
-      "title": "Frontendmentor",
-      "route": "/frontendmentor",
-      "content": [
-        {
-          "title": "Project 1",
-          "route":"/frontendmentor/project1",
-          "description": "Lorem ipsum Project 1"
-        }
-      ]
     }
   ]
 }
