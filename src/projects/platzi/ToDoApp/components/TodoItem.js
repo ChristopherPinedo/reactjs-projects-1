@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { Box, IconButton, Paper, Typography } from '@mui/material'
+import { Box, IconButton, Paper, Stack, Typography } from '@mui/material'
 
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -33,8 +33,8 @@ const TodoItem = ({title, description, completed, todos, setTodos}) => {
       elevation={2}
       sx={{
         position: "relative",
-        minWidth: "100%",
-        maxWidth: "100%",
+        width: "inherit",
+        maxWidth: 1,
         display: "flex",
         justifyContent: "space-around",
         alignItems: "center",
@@ -51,16 +51,13 @@ const TodoItem = ({title, description, completed, todos, setTodos}) => {
           }} />
         </IconButton>
       </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexGrow: 10,
-          flexDirection: "column",
-          maxWidth: "100%"
-        }}>
-        <Typography variant='h6'> {title} </Typography>
-        <Typography variant='p'> {description} </Typography>
-      </Box>
+      <Stack
+      direction="column"
+      flexGrow={6}
+      >
+        <Typography variant='h6' component="h6"> {title} </Typography>
+        <Typography variant='p' component="p" sx={{wordWrap: "break-word"}}> {description} </Typography>
+      </Stack>
       <IconButton
         onClick={ () => handleDelete(title) }
         sx={{

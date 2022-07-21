@@ -118,9 +118,9 @@ const AboutMe = () => {
               </Stack>
             </CardActions>
           </Card>
-          <Stack>
+          {/* <Stack>
             <Typography variant="h4">Info</Typography>
-          </Stack>
+          </Stack> */}
         </Stack>
       </Stack>
     </Container>

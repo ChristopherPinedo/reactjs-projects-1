@@ -103,7 +103,7 @@ function ResponsiveDrawer(props) {
                         >
                           <Typography pl={2}>{element.title}</Typography>
                         </AccordionSummary>
-                        <AccordionDetails p={"0px !important"}>
+                        <AccordionDetails sx={{p: 0}}>
                           {element.content.map((element1, index1) => {
                             return (
                               <ListItemButton

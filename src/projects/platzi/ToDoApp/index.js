@@ -5,7 +5,7 @@ import { TodoItem } from './components/TodoItem';
 import { CreateTodoButton } from './components/CreateTodoButton';
 import { useLocalStorage } from '../../../hooks/useLocalStorage';
 import {
-  Container,
+  Box,
   Divider,
   Stack,
   Typography
@@ -41,13 +41,14 @@ function ToDoApp() {
   const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
-    <Container sx={{height: 1, position: "relative"}}>
+    <Box sx={{height: 1,width: 1, position: "relative"}}>
       <Stack
       direction={{xs: "column", md: "row"}}
       spacing={4}
       divider={<Divider flexItem variant="middle" orientation={matchesMD ? "vertical" : "horizontal"} />}
       sx={{
         height: 1,
+        width: 1,
         alignItems: {xs: "center", md: "flex-start"},
         justifyContent: {xs: "flex-start", md: "space-evenly"},
         padding: 4,
@@ -75,9 +76,9 @@ function ToDoApp() {
         </Stack>
         {/* ------------- TODO BODY */}
         <Stack
-        minWidth="60%"
         spacing={4}
         alignItems="center"
+        width={1}
         >
           { error && <Typography variant="p" >Hubo un error...</Typography> }
           { loading && <Typography variant="p" >Cargando...</Typography> }
@@ -107,7 +108,7 @@ function ToDoApp() {
       todos={todos}
       setTodos={setTodos}
       />}
-    </Container>
+    </Box>
   )
 }
 
