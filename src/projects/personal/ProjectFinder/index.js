@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Divider, Stack } from '@mui/material';
 
-import ProjectFinderHeader from './components/ProjectFinderHeader';
-import ProjectFinderCard from './components/ProjectFinderCard';
+import ProjectHeader from './components/ProjectHeader';
+import ProjectCard from './components/ProjectCard';
 
 function ProjectFinder() {
 
@@ -13,13 +13,13 @@ function ProjectFinder() {
   return (
     <Stack
     spacing={4}
-    divider={<Divider flexItem/>}
+    divider={<Divider variant="middle" flexItem/>}
     sx={{
       minHeight: 1,
       p: 4
     }}>
-      <ProjectFinderHeader />
-      <ProjectFinderCard />
+      <ProjectHeader />
+      <ProjectCard />
     </Stack>
   )
 }

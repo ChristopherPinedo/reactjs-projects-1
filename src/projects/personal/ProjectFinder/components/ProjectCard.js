@@ -6,12 +6,12 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 
-const ProjectFinderCard = () => {
+const ProjectCard = () => {
   return (
     <Card>
       <CardContent>
         <Stack>
-          <Typography variant="h5" component="div" >Lorem Ipsum</Typography>
+          <Typography variant="h5" component="div" gutterBottom>Lorem Ipsum</Typography>
           <Typography variant="p" component="p" >Lorem Ipsum dolor sit amet</Typography>
         </Stack>
       </CardContent>
@@ -25,12 +25,12 @@ const ProjectFinderCard = () => {
         direction="row"
         spacing={1}
         >
-          <IconButton size="small">
+          {/* <IconButton size="small">
             <FavoriteIcon />
           </IconButton>
           <IconButton size="small">
             <ShareIcon />
-          </IconButton>
+          </IconButton> */}
           <IconButton size="small">
             <GitHubIcon />
           </IconButton>
@@ -38,11 +38,11 @@ const ProjectFinderCard = () => {
         <Stack
         direction="row"
         >
-          <Button size="small">Visitar</Button>
+          <Button variant="contained" size="small">Visitar</Button>
         </Stack>
       </Stack>
     </Card>
   )
 }
 
-export default ProjectFinderCard
+export default ProjectCard

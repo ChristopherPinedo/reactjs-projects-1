@@ -18,7 +18,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 
 
-const ProjectFinderHeader = () => {
+const ProjectHeader = () => {
 
   const [filter, setFilter] = React.useState('nombre');
 
@@ -35,8 +35,8 @@ const ProjectFinderHeader = () => {
         Proyectos
       </Typography>
       <Stack
-      alignItems="center"
       spacing={2}
+      width={1}
       >
         <TextField
           fullWidth
@@ -74,4 +74,4 @@ const ProjectFinderHeader = () => {
   )
 }
 
-export default ProjectFinderHeader
+export default ProjectHeader
