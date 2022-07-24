@@ -11,25 +11,24 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Accordion, AccordionDetails, AccordionSummary, Collapse, ListSubheader, Switch } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Switch } from '@mui/material';
 
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
-import ArticleIcon from '@mui/icons-material/Article';
+import PageviewIcon from '@mui/icons-material/Pageview';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 import { Link as RouterLink } from 'react-router-dom';
 
-import jsonData from '../datos/navigation.json';
+import { projectsData } from '../datos/projectsData';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
 
-  const elementRef = React.useRef(null);
+  // const elementRef = React.useRef(null);
   // console.log(elementRef.current?.clientHeight);
 
   const { window } = props;
@@ -40,7 +39,6 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
   const handleClick = () => {
-
     setOpen(!open);
   }
 
@@ -48,7 +46,7 @@ function ResponsiveDrawer(props) {
   const drawer = (
     <div>
       <Toolbar sx={{justifyContent: "center" }} >
-        <Typography variant="h6">Portafolio React.js</Typography>
+        <Typography variant="h6">Portafolio REACT</Typography>
       </Toolbar>
       <Divider />
       <List>
@@ -60,37 +58,19 @@ function ResponsiveDrawer(props) {
                   <AccountBoxIcon/>
                 </ListItemIcon>
               </ListItemButton>
-              <ListItemButton component={RouterLink} to="/projects" >
+              <Divider/>
+              <ListItemButton component={RouterLink} to="/searchProjects" >
                 <ListItemText primary="Proyectos" />
                 <ListItemIcon sx={{justifyContent: "end"}} >
-                  <IntegrationInstructionsIcon/>
+                  <PageviewIcon/>
                 </ListItemIcon>
               </ListItemButton>
               {
-                jsonData.navigation.map((element, index) => {
+                projectsData.sections.map((element, index) => {
                   return(
                     <>
-                      {/* <ListItemButton sx={{pl:4}} key={index} onClick={handleClick}>
-                        <ListItemText primary={element.title} />
-                        {open ? <ExpandLess /> : <ExpandMore />}
-                      </ListItemButton>
-                      <Collapse in={open} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding>
-                          {element.content.map((element1, index1) => {
-                            return (
-                              <ListItemButton
-                              key={index1}
-                              component={RouterLink}
-                              to={element1.route}
-                              sx={{ pl: 6 }}>
-                                <ListItemText primary={element1.title} />
-                              </ListItemButton>
-                            )
-                          })}
-                        </List>
-                      </Collapse> */}
-
                       <Accordion
+                      key={index}
                       disableGutters
                       square
                       variant="string"
@@ -117,7 +97,6 @@ function ResponsiveDrawer(props) {
                           })}
                         </AccordionDetails>
                       </Accordion>
-
                     </>
                   )
                 })
@@ -126,13 +105,14 @@ function ResponsiveDrawer(props) {
           }
         {/* ///////////////////////////////////////// */}
       </List>
+      <Divider/>
       <ListItem sx={{justifyContent: "space-between" }}>
         <ListItemText primary="Dark mode" />
         <Switch
         onChange={event => props.setMode(props.mode === "light" ? "dark" : "light")} />
         <ListItemIcon sx={{justifyContent: "end"}} > <DarkModeIcon/> </ListItemIcon>
       </ListItem>
-
+      <Divider/>
     </div>
   );
 
@@ -163,7 +143,7 @@ function ResponsiveDrawer(props) {
             component="div"
             sx={{ display:{sm: "none",}}}
             >
-            Portafolio React.js
+            Portafolio REACT
           </Typography>
         </Toolbar>
       </AppBar>

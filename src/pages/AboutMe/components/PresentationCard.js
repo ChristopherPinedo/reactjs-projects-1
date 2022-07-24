@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Button, Box, Card, CardActions, CardContent, CardMedia, Divider, IconButton, Stack, Typography } from '@mui/material'
+import { Link, Button, Box, Card, CardActions, CardContent, CardMedia, Divider, IconButton, Stack, Typography } from '@mui/material'
 
-import profileImage from "../../../../assets/profileImg.jpg";
+import profileImage from "../../../assets/profileImg.jpg";
 
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -59,7 +59,13 @@ const PresentationCard = () => {
             direction="row"
             sx={{ flexGrow: 3, justifyContent: "space-evenly" }}
           >
-            <IconButton size="large">
+            <IconButton
+            size="large"
+            component={Link}
+            href=""
+            target="_blank"
+            rel="noopener"
+            >
               <GitHubIcon />
             </IconButton>
             <IconButton size="large">

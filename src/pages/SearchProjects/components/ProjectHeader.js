@@ -31,10 +31,10 @@ const ProjectHeader = () => {
     alignItems="center"
     spacing={4}
     >
-      <Typography variant="h4" component="h4" >
+      <Typography variant="h3" component="h4" >
         Proyectos
       </Typography>
-      <Stack
+      {/* <Stack
       spacing={2}
       width={1}
       >
@@ -69,7 +69,7 @@ const ProjectHeader = () => {
             <FormControlLabel value="concepto" control={<Radio size='small'/>} label="Concepto" />
           </RadioGroup>
         </FormControl>
-      </Stack>
+      </Stack> */}
     </Stack>
   )
 }

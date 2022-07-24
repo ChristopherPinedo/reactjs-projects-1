@@ -1,18 +1,20 @@
 import React from 'react'
 
-import { Button, Card, CardContent, IconButton, Stack, Typography } from '@mui/material'
+import { Button, Card, CardContent, IconButton, Link, Stack, Typography } from '@mui/material'
+
+import { Link as RouterLink } from 'react-router-dom';
 
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 
-const ProjectCard = () => {
+const ProjectCard = ({ title, description, route, ghRoute }) => {
   return (
     <Card>
       <CardContent>
         <Stack>
-          <Typography variant="h5" component="div" gutterBottom>Lorem Ipsum</Typography>
-          <Typography variant="p" component="p" >Lorem Ipsum dolor sit amet</Typography>
+          <Typography variant="h5" component="div" gutterBottom> {title} </Typography>
+          <Typography variant="p" component="p" > {description} </Typography>
         </Stack>
       </CardContent>
       <Stack
@@ -31,14 +33,27 @@ const ProjectCard = () => {
           <IconButton size="small">
             <ShareIcon />
           </IconButton> */}
-          <IconButton size="small">
+          <IconButton
+          size="small"
+          component={Link}
+          href={ghRoute}
+          target="_blank"
+          rel="noopener"
+          >
             <GitHubIcon />
           </IconButton>
         </Stack>
         <Stack
         direction="row"
         >
-          <Button variant="contained" size="small">Visitar</Button>
+          <Button
+          variant="contained"
+          size="small"
+          component={RouterLink}
+          to={route}
+          >
+            Visitar
+          </Button>
         </Stack>
       </Stack>
     </Card>
