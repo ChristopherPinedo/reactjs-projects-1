@@ -7,6 +7,7 @@ import { useLocalStorage } from '../../../hooks/useLocalStorage';
 import {
   Box,
   Divider,
+  Skeleton,
   Stack,
   Typography
 } from '@mui/material';
@@ -19,7 +20,7 @@ function ToDoApp() {
     saveItems: setTodos,
     error,
     loading,
-  } = useLocalStorage("TODOS_V1", [])
+  } = useLocalStorage("TODOS_V1", [], 2000)
 
   const [ searchValue, setSearchValue ] = useState("")
 
@@ -81,8 +82,13 @@ function ToDoApp() {
         width={1}
         >
           { error && <Typography variant="p" >Hubo un error...</Typography> }
-          { loading && <Typography variant="p" >Cargando...</Typography> }
-          { (loading && !searchedTodos.length) && <Typography variant="p" >Crea tu primer todo</Typography> }
+          { loading && (
+            <>
+              <Skeleton width="100%" height="88px" variant="rectangular" sx={{pb:4, borderRadius:2}} />
+              <Skeleton width="100%" height="88px" variant="rectangular" sx={{borderRadius:2}} />
+            </>
+            ) }
+          { (loading && !searchedTodos.length) && <Typography variant="h5" > Crea tu primer todo !! </Typography> }
           {searchedTodos.map(({title, description, completed}, index) => {
             return (
               <TodoItem

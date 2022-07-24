@@ -11,6 +11,8 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import EmailIcon from "@mui/icons-material/Email";
 
 import { personalData } from '../../../datos/personalData';
+import CV from '../../../assets/Christopher_Pinedo.pdf';
+
 import ReactWhatsapp from 'react-whatsapp';
 import PresentationDialog from './PresentationDialog';
 
@@ -23,21 +25,19 @@ const PresentationCard = () => {
         alignItems="center"
         p={2}
       >
-        {/* <CardMedia
+        <CardMedia
           component="img"
-          alt="profile image"
+          alt="Profile image"
           image={profileImage}
           sx={{
             height: "120px",
             width: "120px",
             borderRadius: 1,
-            m: 2,
-            mr: 0
           }}
-        /> */}
-        <Box borderRadius="12px" sx={{bgcolor:"text.secondary", display:"flex", alignItems:"center"}}>
+        />
+        {/* <Box borderRadius="12px" sx={{bgcolor:"text.secondary", display:"flex", alignItems:"center"}}>
           <AccountBoxIcon sx={{width:"120px", height:"120px", color:"background.paper"}} />
-        </Box>
+        </Box> */}
 
         <CardContent sx={{ "&:last-child": { px: 2, py: 0 } }}>
           <Typography variant="p" color="text.secondary">
@@ -51,10 +51,9 @@ const PresentationCard = () => {
         <Button
         fullWidth
         variant="contained"
-        component={Link}
-        href={ personalData.cv }
-        target="_blank"
-        rel="noopener"
+        component={"a"}
+        download="CV_ChristopherPinedo.pdf"
+        href={CV}
         >
           Descargar CV
         </Button>
@@ -70,7 +69,7 @@ const PresentationCard = () => {
             >
               <IconButton
               size="large"
-              sx={{color:"black"}}
+              sx={{color:"text.primary"}}
               component={Link}
               href={ personalData.github }
               target="_blank"
@@ -101,7 +100,7 @@ const PresentationCard = () => {
               size="large"
               component={ReactWhatsapp}
               number={personalData.phone}
-              message="Hola mundo">
+              message="Hola Christopher, me interesa tu perfil...">
                 <WhatsAppIcon sx={{fontSize:35}}/>
               </IconButton>
             </Stack>

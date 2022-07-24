@@ -6,10 +6,18 @@ import { CssBaseline } from '@mui/material/';
 import SearchProjects from './pages/SearchProjects';
 import ToDoApp from './projects/platzi/ToDoApp';
 import AboutMe from './pages/AboutMe';
+import { useLocalStorage } from './hooks/useLocalStorage';
 
 function App() {
 
-  const [mode, setMode] = React.useState('light');
+  const {
+    items: mode,
+    saveItems: setMode,
+    error,
+    loading,
+  } = useLocalStorage("SITE_MODE", ['light'], 0)
+
+  // const [mode, setMode] = React.useState('light');
 
   const globalTheme = createTheme({
     palette: {
