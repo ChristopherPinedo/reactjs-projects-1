@@ -30,6 +30,8 @@ function SearchProjects() {
                 description={ele.description}
                 route={ele.route}
                 ghRoute={ele.ghRoute}
+                technologies={ele.technologies}
+                concepts={ele.concepts}
               />
             )
           })

@@ -22,7 +22,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { projectsData } from '../datos/projectsData';
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
+import { ExpandMore } from '@mui/icons-material';
 
 const drawerWidth = 240;
 
@@ -38,9 +38,9 @@ function ResponsiveDrawer(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const handleClick = () => {
-    setOpen(!open);
-  }
+  // const handleClick = () => {
+  //   setOpen(!open);
+  // }
 
 
   const drawer = (
