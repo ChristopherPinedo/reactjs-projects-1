@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.js": "/reactjs-projects-1/static/js/main.82ee498e.js",
+    "main.js": "/reactjs-projects-1/static/js/main.3e9b6108.js",
     "static/js/787.873fb27e.chunk.js": "/reactjs-projects-1/static/js/787.873fb27e.chunk.js",
+    "static/media/Christopher_Pinedo.pdf": "/reactjs-projects-1/static/media/Christopher_Pinedo.c47286e5f4c611b8d6f7.pdf",
     "static/media/profileImg.jpg": "/reactjs-projects-1/static/media/profileImg.19bba9c1dd108d000728.jpg",
     "index.html": "/reactjs-projects-1/index.html",
-    "main.82ee498e.js.map": "/reactjs-projects-1/static/js/main.82ee498e.js.map",
+    "main.3e9b6108.js.map": "/reactjs-projects-1/static/js/main.3e9b6108.js.map",
     "787.873fb27e.chunk.js.map": "/reactjs-projects-1/static/js/787.873fb27e.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.82ee498e.js"
+    "static/js/main.3e9b6108.js"
   ]
 }
