@@ -47,7 +47,7 @@ function ResponsiveDrawer(props) {
   const drawer = (
     <div>
       <Toolbar sx={{justifyContent: "center" }} >
-        <Typography variant="h6">PORTAFOLIO REACT</Typography>
+        <Typography variant="h6">Portafolio Web</Typography>
       </Toolbar>
       <Divider />
       <List>
@@ -66,6 +66,7 @@ function ResponsiveDrawer(props) {
                   <PageviewIcon/>
                 </ListItemIcon>
               </ListItemButton>
+              <Divider/>
               {
                 projectsData.sections.map((element, index) => {
                   return(
@@ -145,7 +146,7 @@ function ResponsiveDrawer(props) {
             component="div"
             sx={{ display:{sm: "none",}}}
             >
-            PORTAFOLIO REACT
+            Portafolio Web
           </Typography>
         </Toolbar>
       </AppBar>
