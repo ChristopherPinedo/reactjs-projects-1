@@ -13,14 +13,6 @@ const projectsData = {
           technologies: ["HTML", "CSS", "JS"],
           concepts: ["POO", "POO", "POO", "POO"],
         },
-        {
-          title: "Default Project",
-          route: "/personal/defaultProject",
-          ghRoute: "https://github.com/ChristopherPinedo/reactjs-projects-1",
-          description: "Default Project",
-          technologies: ["Tech1", "Tech2", "Tech3"],
-          concepts: ["POO", "POO", "POO", "POO"],
-        },
       ]
     },
     {
@@ -35,14 +27,14 @@ const projectsData = {
           technologies: ["HTML", "CSS", "JS"],
           concepts: ["POO", "POO", "POO", "POO"],
         },
-        {
-          title: "Default Project",
-          route: "/personal/defaultProject",
-          ghRoute: "https://github.com/ChristopherPinedo/reactjs-projects-1",
-          description: "Default Project",
-          technologies: ["Tech1", "Tech2", "Tech3"],
-          concepts: ["POO", "POO", "POO", "POO"],
-        },
+        // {
+        //   title: "Default Project",
+        //   route: "/personal/defaultProject",
+        //   ghRoute: "https://github.com/ChristopherPinedo/reactjs-projects-1",
+        //   description: "Default Project",
+        //   technologies: ["Tech1", "Tech2", "Tech3"],
+        //   concepts: ["POO", "POO", "POO", "POO"],
+        // },
       ]
     }
   ],

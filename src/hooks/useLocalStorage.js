@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const useLocalStorage = (itemName, initialValue) => {
+const useLocalStorage = (itemName, initialValue, time) => {
 
   const [ error, setError ] = useState(false)
   const [ loading, setLoading ] = useState(true)
@@ -11,7 +11,7 @@ const useLocalStorage = (itemName, initialValue) => {
       try {
         const localStorageItems = localStorage.getItem(itemName)
         let parsedItems;
-  
+
         if (localStorageItems) {
           parsedItems = JSON.parse(localStorageItems)
         } else {
@@ -24,15 +24,14 @@ const useLocalStorage = (itemName, initialValue) => {
         setError(true);
         console.log(error);
       }
-    }, 2000 )
+    }, time )
   }, [items] )
-
 
 
   const saveItems = (newItems) => {
     try {
-      const stringifiedTodos = JSON.stringify(newItems)
-      localStorage.setItem(itemName, stringifiedTodos)
+      const stringifiedItems = JSON.stringify(newItems)
+      localStorage.setItem(itemName, stringifiedItems)
       setItems(newItems)
     } catch (error) {
       setError(true);

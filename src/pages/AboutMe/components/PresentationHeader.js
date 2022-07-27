@@ -1,14 +1,17 @@
-import { Stack, Typography } from '@mui/material'
 import React from 'react'
+
+import { Stack, Typography } from '@mui/material'
+
+import { personalData } from '../../../datos/personalData';
 
 const PresentationHeader = () => {
   return (
     <Stack>
       <Typography variant="h3" component="h2">
-        Christopher Pinedo
+        { personalData.fullName }
       </Typography>
       <Typography variant="h5" component="h3">
-        Frontend Developer
+        { personalData.role }
       </Typography>
     </Stack>
   )

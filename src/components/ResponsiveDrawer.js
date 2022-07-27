@@ -22,7 +22,8 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { projectsData } from '../datos/projectsData';
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
+import { ExpandMore } from '@mui/icons-material';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 const drawerWidth = 240;
 
@@ -38,15 +39,15 @@ function ResponsiveDrawer(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const handleClick = () => {
-    setOpen(!open);
-  }
+  // const handleClick = () => {
+  //   setOpen(!open);
+  // }
 
 
   const drawer = (
     <div>
       <Toolbar sx={{justifyContent: "center" }} >
-        <Typography variant="h6">Portafolio REACT</Typography>
+        <Typography variant="h6">PORTAFOLIO REACT</Typography>
       </Toolbar>
       <Divider />
       <List>
@@ -109,7 +110,8 @@ function ResponsiveDrawer(props) {
       <ListItem sx={{justifyContent: "space-between" }}>
         <ListItemText primary="Dark mode" />
         <Switch
-        onChange={event => props.setMode(props.mode === "light" ? "dark" : "light")} />
+        checked={props.mode === "dark" ? true : false }
+        onChange={() => props.setMode(props.mode === "light" ? "dark" : "light")} />
         <ListItemIcon sx={{justifyContent: "end"}} > <DarkModeIcon/> </ListItemIcon>
       </ListItem>
       <Divider/>
@@ -143,7 +145,7 @@ function ResponsiveDrawer(props) {
             component="div"
             sx={{ display:{sm: "none",}}}
             >
-            Portafolio REACT
+            PORTAFOLIO REACT
           </Typography>
         </Toolbar>
       </AppBar>
