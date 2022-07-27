@@ -100,7 +100,7 @@ const PresentationCard = () => {
               size="large"
               component={ReactWhatsapp}
               number={personalData.phone}
-              message="Hola Christopher, me interesa tu perfil...">
+              message="Hola Christopher ...">
                 <WhatsAppIcon sx={{fontSize:35}}/>
               </IconButton>
             </Stack>
