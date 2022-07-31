@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/reactjs-projects-1/static/js/main.0a5fcf5f.js",
-    "static/js/787.873fb27e.chunk.js": "/reactjs-projects-1/static/js/787.873fb27e.chunk.js",
-    "static/media/Christopher_Pinedo.pdf": "/reactjs-projects-1/static/media/Christopher_Pinedo.1a76b0d4467ee949fd94.pdf",
-    "static/media/profileImg.jpg": "/reactjs-projects-1/static/media/profileImg.19bba9c1dd108d000728.jpg",
-    "index.html": "/reactjs-projects-1/index.html",
-    "main.0a5fcf5f.js.map": "/reactjs-projects-1/static/js/main.0a5fcf5f.js.map",
-    "787.873fb27e.chunk.js.map": "/reactjs-projects-1/static/js/787.873fb27e.chunk.js.map"
+    "main.js": "/portfolio/static/js/main.a8f157a4.js",
+    "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/Christopher_Pinedo.pdf": "/portfolio/static/media/Christopher_Pinedo.1a76b0d4467ee949fd94.pdf",
+    "static/media/profileImg.jpg": "/portfolio/static/media/profileImg.19bba9c1dd108d000728.jpg",
+    "index.html": "/portfolio/index.html",
+    "main.a8f157a4.js.map": "/portfolio/static/js/main.a8f157a4.js.map",
+    "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.0a5fcf5f.js"
+    "static/js/main.a8f157a4.js"
   ]
 }
