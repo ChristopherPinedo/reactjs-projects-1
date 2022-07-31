@@ -21,7 +21,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 import { Link as RouterLink } from 'react-router-dom';
 
-import { projectsData } from '../datos/projectsData';
+import { projectsData } from '../data/projectsData';
 import { ExpandMore } from '@mui/icons-material';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 

@@ -1,7 +1,7 @@
 const personalData = {
   fullName: "Christopher Pinedo",
   role: " Development / Frontend Developer",
-  description: "Ingeniero de sofware residente en Perú con 1 año de experiencia en desarrollo web especializado en frontend usando React.js",
+  description: "Desarrollador de Software especializado en Frontend orientado a web usando React.js",
   email: "christopher.pinedo@hotmail.com",
   phone: "+51 978 544 045",
   github: "https://github.com/ChristopherPinedo",

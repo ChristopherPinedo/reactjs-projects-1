@@ -5,7 +5,7 @@ import { Divider, Stack } from '@mui/material';
 import ProjectHeader from './components/ProjectHeader';
 import ProjectCard from './components/ProjectCard';
 
-import { projectsData } from '../../datos/projectsData';
+import { projectsData } from '../../data/projectsData';
 
 function SearchProjects() {
 

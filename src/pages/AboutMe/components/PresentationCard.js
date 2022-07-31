@@ -10,7 +10,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import EmailIcon from "@mui/icons-material/Email";
 
-import { personalData } from '../../../datos/personalData';
+import { personalData } from '../../../data/personalData';
 import CV from '../../../assets/Christopher_Pinedo.pdf';
 
 import ReactWhatsapp from 'react-whatsapp';
